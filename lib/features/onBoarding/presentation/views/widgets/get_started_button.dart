@@ -1,7 +1,9 @@
 import 'package:doctor_appointment_app/core/helpers/extensions.dart';
 import 'package:doctor_appointment_app/core/routing/routes.dart';
 import 'package:doctor_appointment_app/core/theming/colors.dart';
+import 'package:doctor_appointment_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
+
 class GetStartedButton extends StatelessWidget {
   const GetStartedButton({super.key});
 
@@ -16,8 +18,7 @@ class GetStartedButton extends StatelessWidget {
               ),
             ),
           ),
-          minimumSize:
-          WidgetStatePropertyAll(Size(double.infinity, 52)),
+          minimumSize: WidgetStatePropertyAll(Size(double.infinity, 52)),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           backgroundColor: WidgetStatePropertyAll(
             ColorsManager.mainBlue,
@@ -26,9 +27,9 @@ class GetStartedButton extends StatelessWidget {
         onPressed: () {
           context.pushNamed(Routes.loginView);
         },
-        child: const Text(
+        child: Text(
           'Get Started',
-          style: TextStyle(color: Colors.white),
+          style: TextStyles.font16WhiteSemiBold,
         ));
   }
 }
