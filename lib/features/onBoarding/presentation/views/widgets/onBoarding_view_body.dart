@@ -17,7 +17,7 @@ class OnBoardingViewBody extends StatelessWidget {
           children: [
             const DocLogoAndName(),
             SizedBox(
-              height: 20.h,
+              height: 7.h,
             ),
             const DocImageAndText(),
             Padding(
@@ -28,7 +28,7 @@ class OnBoardingViewBody extends StatelessWidget {
                     children: [
                       Text(
                         'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-                        style: TextStyles.font15GreyRegular,
+                        style: TextStyles.font13GreyRegular,
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(
