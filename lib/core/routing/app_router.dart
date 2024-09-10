@@ -3,6 +3,8 @@ import 'package:doctor_appointment_app/features/auth/presentation/views/login_vi
 import 'package:doctor_appointment_app/features/onBoarding/presentation/views/onBoarding_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../features/auth/presentation/views/home_view.dart';
+
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -16,7 +18,7 @@ class AppRouter {
         );
       case Routes.homeView: // and here
         return MaterialPageRoute(
-          builder: (_) => Container(),
+          builder: (_) => const HomeView(),
         );
       default:
         return MaterialPageRoute(
