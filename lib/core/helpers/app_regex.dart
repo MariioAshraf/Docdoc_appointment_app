@@ -13,6 +13,9 @@ class AppRegex {
   static bool hasLowerCase(String password) {
     return RegExp(r'^(?=.*[a-z])').hasMatch(password);
   }
+  static bool isPhoneValid(String password) {
+    return RegExp(r'^01[0-2,5]{1}[0-9]{8}$').hasMatch(password);
+  }
 
   static bool hasUpperCase(String password) {
     return RegExp(r'^(?=.*[A-Z])').hasMatch(password);

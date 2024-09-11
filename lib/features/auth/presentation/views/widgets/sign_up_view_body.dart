@@ -1,20 +1,20 @@
-import 'package:doctor_appointment_app/core/helpers/spacing.dart';
-import 'package:doctor_appointment_app/core/theming/styles.dart';
-import 'package:doctor_appointment_app/features/auth/presentation/managers/login_cubit/login_cubit.dart';
+import 'package:doctor_appointment_app/features/auth/presentation/managers/sign_up_cubit/sign_up_cubit.dart';
+import 'package:doctor_appointment_app/features/auth/presentation/views/widgets/sign_up_bloc_listerner.dart';
+import 'package:doctor_appointment_app/features/auth/presentation/views/widgets/sign_up_form.dart';
+import 'package:doctor_appointment_app/features/auth/presentation/views/widgets/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/theming/styles.dart';
 import '../../../../../core/widgets/app_text_button.dart';
-import 'don\'t_have_account_text.dart';
-import 'login_bloc_listener.dart';
-import 'login_form.dart';
-import 'terms_and_conditions_text.dart';
+import 'already_have_an_account_text.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SignUpViewBody extends StatelessWidget {
+  const SignUpViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var loginCubit = LoginCubit.get(context);
+    var signUpCubit = SignUpCubit.get(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 40.h),
       child: SingleChildScrollView(
@@ -22,7 +22,7 @@ class LoginViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Welcome Back',
+              'Sign Up Now',
               style: TextStyles.font24BlueBold,
             ),
             verticalSpacing(8),
@@ -31,7 +31,7 @@ class LoginViewBody extends StatelessWidget {
               style: TextStyles.font14GreyRegular,
             ),
             verticalSpacing(30),
-            const LoginForm(),
+            const SignUpForm(),
             verticalSpacing(22),
             Align(
               alignment: Alignment.centerRight,
@@ -41,21 +41,20 @@ class LoginViewBody extends StatelessWidget {
               ),
             ),
             verticalSpacing(22),
-            const LoginBlocListener(),
+            const SignUpBlocListener(),
             AppTextButton(
               onPressed: () async {
-                if (loginCubit.formKey.currentState!.validate()) {
-                  await loginCubit.login();
+                if (signUpCubit.formKey.currentState!.validate()) {
+                  await signUpCubit.signUp();
                 }
               },
-              textTitle: 'Login',
+              textTitle: 'Sign Up',
               textStyle: TextStyles.font16WhiteSemiBold,
             ),
             verticalSpacing(40),
             const TermsAndConditionsText(),
             verticalSpacing(50),
-            const DoNotHaveAnAccountAndSignUpText(),
-
+            const AlreadyHaveAnAccountAndSignInText(),
           ],
         ),
       ),
