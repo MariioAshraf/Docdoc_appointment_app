@@ -38,17 +38,42 @@ class ServerFailure extends Failures {
   }
 
   factory ServerFailure.fromDioResponse(int statusCode, dynamic response) {
-    if (statusCode == 400 || statusCode == 401 || statusCode == 403|| statusCode == 422) {
-      if(statusCode == 422){
-        return ServerFailure(response['data']['email'][0]);
+    if (statusCode == 400 ||
+        statusCode == 401 ||
+        statusCode == 403 ||
+        statusCode == 422) {
+      if (statusCode == 422) {
+        List<String> errors = [];
+
+        if (response['data'] != null) {
+          if (response['data']['name'] != null) {
+            errors.add(response['data']['name'][0]);
+          }
+          if (response['data']['email'] != null) {
+            errors.add(response['data']['email'][0]);
+          }
+          if (response['data']['phone'] != null) {
+            errors.add(response['data']['phone'][0]);
+          }
+          if (response['data']['gender'] != null) {
+            errors.add(response['data']['gender'][0]);
+          }
+          if (response['data']['password'] != null) {
+            errors.add(response['data']['password'][0]);
+          }
+        }
+
+        return ServerFailure(
+            errors.isNotEmpty ? errors.join('\n') : "Unknown error");
       }
+
       return ServerFailure(response['message']);
     } else if (statusCode == 404) {
       return ServerFailure('Your request not found, please try later!');
     } else if (statusCode == 500) {
       return ServerFailure('Internal Server error, please try later!');
     } else {
-      return ServerFailure('Opps there was an error, please try again!');
+      return ServerFailure('Oops, there was an error, please try again!');
     }
   }
 }

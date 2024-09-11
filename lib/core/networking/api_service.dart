@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:doctor_appointment_app/features/auth/data/models/login_models/login_request_model/login_request_model.dart';
+import 'package:doctor_appointment_app/features/auth/data/models/sign_up_models/sign_up_request_body.dart';
 
 class ApiService {
 
@@ -19,6 +20,21 @@ class ApiService {
           'Accept' : 'application/json'
         }
       )
+    );
+    return response.data;
+  }
+  Future<Map<String, dynamic>> signUp(
+      {required String endPoint,
+      required SignUpRequestBody signUpRequestBody}) async {
+    var response = await _dio.post(
+      '$_baseUrl$endPoint',
+      data: signUpRequestBody.toJson(),
+        options: Options(
+            headers: {
+              'Accept' : 'application/json',
+              'Content-Type' : 'application/json',
+            }
+        )
     );
     return response.data;
   }
