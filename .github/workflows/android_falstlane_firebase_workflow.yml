@@ -27,9 +27,20 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
+      # Install Ruby and Bundler
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3.5'
+          bundler-cache: true
+          working-directory: android
+
       # Install dependencies
-      - name: Install dependencies
+      - name: Install Flutter dependencies
         run: flutter pub get
+
+      - name: Install Fastlane
+        run: bundle install
 
       # Build Android app using Fastlane
       - name: Firebase App Distribution
@@ -37,3 +48,4 @@ jobs:
           FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}  # Secrets for Firebase token
         run: |
           bundle exec fastlane firebase_distribution
+        working-directory: android
