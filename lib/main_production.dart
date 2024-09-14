@@ -5,7 +5,7 @@ import 'core/routing/app_router.dart';
 import 'doc_app.dart';
 
 void main()async {
-await ScreenUtil.ensureScreenSize();
+  await ScreenUtil.ensureScreenSize();
   serviceLocator();
   runApp(DocApp(
     appRouter: AppRouter(),
