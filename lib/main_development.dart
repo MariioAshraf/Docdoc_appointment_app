@@ -4,10 +4,8 @@ import 'core/di/dependency_injection.dart';
 import 'core/routing/app_router.dart';
 import 'doc_app.dart';
 
-void main()async {
+void main() async {
   await ScreenUtil.ensureScreenSize();
   serviceLocator();
-  runApp(DocApp(
-    appRouter: AppRouter(),
-  ));
+  runApp(DocApp(appRouter: AppRouter()));
 }

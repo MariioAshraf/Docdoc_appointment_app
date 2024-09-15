@@ -3,8 +3,8 @@ import 'package:doctor_appointment_app/features/auth/presentation/managers/sign_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class SignUpBlocListener extends StatelessWidget {
   const SignUpBlocListener({super.key});
@@ -20,7 +20,7 @@ class SignUpBlocListener extends StatelessWidget {
               context: context,
               builder: (context) => const Center(
                 child: CircularProgressIndicator(
-                  color: ColorsManager.mainBlue,
+                  color: AppColorsManager.mainBlue,
                 ),
               ),
             );
@@ -47,7 +47,7 @@ class SignUpBlocListener extends StatelessWidget {
                       },
                       child: Text(
                         'Got it',
-                        style: TextStyles.font14DarkBlueMedium,
+                        style: AppTextStyles.font14DarkBlueMedium,
                       ))
                 ],
               ),

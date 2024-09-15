@@ -1,4 +1,4 @@
-import 'package:doctor_appointment_app/core/theming/styles.dart';
+import 'package:doctor_appointment_app/core/theming/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'doc_image_and_text.dart';
@@ -28,7 +28,7 @@ class OnBoardingViewBody extends StatelessWidget {
                     children: [
                       Text(
                         'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-                        style: TextStyles.font13GreyRegular,
+                        style: AppTextStyles.font13GreyRegular,
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(

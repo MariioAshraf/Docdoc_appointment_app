@@ -1,6 +1,6 @@
 import 'package:doctor_appointment_app/core/helpers/app_regex.dart';
 import 'package:doctor_appointment_app/core/helpers/spacing.dart';
-import 'package:doctor_appointment_app/core/theming/colors.dart';
+import 'package:doctor_appointment_app/core/theming/app_colors.dart';
 import 'package:doctor_appointment_app/core/widgets/app_text_form_field.dart';
 import 'package:doctor_appointment_app/features/auth/presentation/views/widgets/password_validation.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +83,7 @@ class _LoginFormState extends State<LoginForm> {
               },
               icon: Icon(
                 isObscureText ? Icons.visibility_off : Icons.visibility,
-                color: ColorsManager.darkBlue,
+                color: AppColorsManager.darkBlue,
               ),
             ),
             hintText: 'Password',

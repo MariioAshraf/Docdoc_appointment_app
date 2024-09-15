@@ -1,5 +1,5 @@
 import 'package:doctor_appointment_app/core/helpers/spacing.dart';
-import 'package:doctor_appointment_app/core/theming/styles.dart';
+import 'package:doctor_appointment_app/core/theming/app_styles.dart';
 import 'package:doctor_appointment_app/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,12 +23,12 @@ class LoginViewBody extends StatelessWidget {
           children: [
             Text(
               'Welcome Back',
-              style: TextStyles.font24BlueBold,
+              style: AppTextStyles.font24BlueBold,
             ),
             verticalSpacing(8),
             Text(
               'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-              style: TextStyles.font14GreyRegular,
+              style: AppTextStyles.font14GreyRegular,
             ),
             verticalSpacing(30),
             const LoginForm(),
@@ -37,7 +37,7 @@ class LoginViewBody extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: Text(
                 'Forgot Password?',
-                style: TextStyles.font13BlueRegular,
+                style: AppTextStyles.font13BlueRegular,
               ),
             ),
             verticalSpacing(22),
@@ -49,7 +49,7 @@ class LoginViewBody extends StatelessWidget {
                 }
               },
               textTitle: 'Login',
-              textStyle: TextStyles.font16WhiteSemiBold,
+              textStyle: AppTextStyles.font16WhiteSemiBold,
             ),
             verticalSpacing(40),
             const TermsAndConditionsText(),

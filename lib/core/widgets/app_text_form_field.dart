@@ -1,5 +1,5 @@
-import 'package:doctor_appointment_app/core/theming/colors.dart';
-import 'package:doctor_appointment_app/core/theming/styles.dart';
+import 'package:doctor_appointment_app/core/theming/app_colors.dart';
+import 'package:doctor_appointment_app/core/theming/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,9 +45,9 @@ class AppTextFormField extends StatelessWidget {
       },
       controller: controller,
       cursorOpacityAnimates: true,
-      cursorColor: courserColor ?? ColorsManager.mainBlue,
+      cursorColor: courserColor ?? AppColorsManager.mainBlue,
       obscureText: obscureText ?? false,
-      style: inputTextStyle ?? TextStyles.font14DarkBlueMedium,
+      style: inputTextStyle ?? AppTextStyles.font14DarkBlueMedium,
       decoration: InputDecoration(
         errorBorder: OutlineInputBorder(
             borderSide: const BorderSide(
@@ -62,7 +62,7 @@ class AppTextFormField extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(16)),
         filled: true,
-        fillColor: backGroundColor ?? ColorsManager.moreLighterGrey,
+        fillColor: backGroundColor ?? AppColorsManager.moreLighterGrey,
         isDense: true,
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(
@@ -72,18 +72,18 @@ class AppTextFormField extends StatelessWidget {
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
                 borderSide: const BorderSide(
-                  color: ColorsManager.mainBlue,
+                  color: AppColorsManager.mainBlue,
                   width: 1.3,
                 ),
                 borderRadius: BorderRadius.circular(16)),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
                 borderSide: const BorderSide(
-                  color: ColorsManager.lighterGrey,
+                  color: AppColorsManager.lighterGrey,
                   width: 1.3,
                 ),
                 borderRadius: BorderRadius.circular(16)),
-        hintStyle: hintStyle ?? TextStyles.font14LightGreyRegular,
+        hintStyle: hintStyle ?? AppTextStyles.font14LightGreyRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
       ),

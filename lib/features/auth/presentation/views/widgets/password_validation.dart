@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class PasswordValidation extends StatelessWidget {
   const PasswordValidation(
@@ -52,14 +52,14 @@ Widget passwordValidationRow({required String text, required bool hasValidated})
     children: [
       const CircleAvatar(
         radius: 2,
-        backgroundColor: ColorsManager.darkBlue,
+        backgroundColor: AppColorsManager.darkBlue,
       ),
       Text(
         text,
-        style: TextStyles.font14DarkBlueMedium.copyWith(
+        style: AppTextStyles.font14DarkBlueMedium.copyWith(
           fontSize: 13,
           decoration: hasValidated ? TextDecoration.lineThrough : null,
-          color: hasValidated ? Colors.grey : ColorsManager.darkBlue,
+          color: hasValidated ? Colors.grey : AppColorsManager.darkBlue,
           decorationColor: Colors.green,
           decorationThickness: 3,
         ),

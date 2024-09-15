@@ -1,6 +1,6 @@
 import 'package:doctor_appointment_app/core/routing/app_router.dart';
 import 'package:doctor_appointment_app/core/routing/routes.dart';
-import 'package:doctor_appointment_app/core/theming/colors.dart';
+import 'package:doctor_appointment_app/core/theming/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +18,7 @@ class DocApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Doc App',
         theme: ThemeData(
-          primaryColor: ColorsManager.mainBlue,
+          primaryColor: AppColorsManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
         initialRoute: Routes.onBoardingView,

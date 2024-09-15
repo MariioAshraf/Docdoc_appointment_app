@@ -3,8 +3,8 @@ import 'package:doctor_appointment_app/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 import '../../managers/login_cubit/login_cubit.dart';
 class LoginBlocListener extends StatelessWidget {
   const LoginBlocListener({super.key});
@@ -20,7 +20,7 @@ class LoginBlocListener extends StatelessWidget {
               context: context,
               builder: (context) => const Center(
                 child: CircularProgressIndicator(
-                  color: ColorsManager.mainBlue,
+                  color: AppColorsManager.mainBlue,
                 ),
               ),
             );
@@ -47,7 +47,7 @@ class LoginBlocListener extends StatelessWidget {
                       },
                       child: Text(
                         'Got it',
-                        style: TextStyles.font14DarkBlueMedium,
+                        style: AppTextStyles.font14DarkBlueMedium,
                       ))
                 ],
               ),

@@ -1,4 +1,4 @@
-import 'package:doctor_appointment_app/core/theming/styles.dart';
+import 'package:doctor_appointment_app/core/theming/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,7 +17,7 @@ class DocLogoAndName extends StatelessWidget {
         ),
         Text(
           'Docdoc',
-          style: TextStyles.font24BlackBold,
+          style: AppTextStyles.font24BlackBold,
         )
       ],
     );
