@@ -25,6 +25,7 @@ class HomeViewBody extends StatelessWidget {
           verticalSpacing(20),
           const DoctorSpecialitySeeAll(),
           const DoctorSpecialityListView(),
+          verticalSpacing(13),
           const DoctorSpecialityFilterListView()
         ],
       ),
